@@ -1,0 +1,41 @@
+
+
+  <div class="panel-body">
+    <div class="row">
+      <table class="table table-hover">
+        <thead class="warning">
+        <th><center>Color</center></th>
+        <th><center>Material</center></th>
+        <th><center>Espesor</center></th>
+        <th><center>Altas</center></th>
+        <th ><center>Bajas</center></th>
+        </thead>
+<%= form_tag stocks_path  do %>
+
+ <% @items.each do |item| %>
+  <%= fields_for 'data[]', @stock do |stock| %>
+  <tbody>
+    <tr>
+    <td><%= item.nombre %></td>
+    <td><center><%= item.material %></center></td>
+    <td><center><%= item.espesor %></center></td>
+    <td><center><%= stock.text_field :altas %></center></td>
+    <td><center><%= stock.text_field :bajas %></center></td>
+    <%= stock.hidden_field :item_id, :value => item.id %>
+  <% end %>
+
+<% end %>
+</tr>
+</tbody>
+</table>
+<div class="form-group">
+    <div class="col-sm-offset-3 col-sm-5">
+  <%= submit_tag "Update", class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>
+
+ 
+   
+
+    

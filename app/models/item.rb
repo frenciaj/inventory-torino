@@ -1,14 +1,15 @@
 class Item < ActiveRecord::Base
-  mount_uploader :picture, PictureUploader
-  attr_accessible :description, :location, :name, :picture, :product_model_number, :vendor_part_number, :quantity, :unit_value, :vendor_url, :value, :vendor_name, :category
+    has_many :stocks
+#   attr_accessible :nombre, :espesor, :material, :quantity
+  accepts_nested_attributes_for :stocks
+  
+  self.per_page = 50
 
-self.per_page = 25
+ def self.search(search_term)
+  where("nombre LIKE ?", "%#{search_term}%")
+ end
+ 
+ protected
 
-belongs_to :item
-after_save :update_value
-protected
-
-  def update_value
-   update_column :value, (quantity * unit_value)
-  end
+ 
 end

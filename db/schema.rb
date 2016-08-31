@@ -11,26 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412010617) do
+ActiveRecord::Schema.define(version: 20160824232702) do
 
   create_table "items", force: :cascade do |t|
-    t.text     "name"
-    t.text     "description"
-    t.text     "product_model_number"
-    t.string   "vendor_part_number"
-    t.string   "vendor_name"
+    t.string   "nombre"
+    t.integer  "espesor"
+    t.string   "material"
     t.integer  "quantity"
-    t.decimal  "unit_value"
-    t.decimal  "value"
-    t.string   "picture"
-    t.text     "vendor_url"
-    t.text     "category"
-    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "stocks", force: :cascade do |t|
+    t.integer  "altas"
+    t.integer  "bajas"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stocks", ["item_id"], name: "index_stocks_on_item_id"
+
   create_table "users", force: :cascade do |t|
+    t.string   "name",                               null: false
     t.string   "email",                              null: false
     t.string   "encrypted_password",                 null: false
     t.string   "reset_password_token"

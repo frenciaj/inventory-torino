@@ -3,10 +3,23 @@ class ItemsController < ApplicationController
   respond_to :html, :json
   # GET /items
   # GET /items.json
+
+  
   def index
-    @items = Item.all
-    respond_with(@items)
+  # byebug
+  #@items = params[:search].present? ? Item.search(params[:search]) : Item.all
   end
+
+  # def search
+  #       @items = Item.all
+
+  # end
+  
+  # def search_results
+  #   @found_items = Item.keyword_seach(params[:search_keywords])
+  #   render :layout => false
+  # end
+  
 
   # GET /items/1
   # GET /items/1.json
@@ -18,6 +31,13 @@ class ItemsController < ApplicationController
       format.json { render json: @item }
     end
   end
+  
+  def change
+  # @items = Item.all
+  
+  end
+  
+  
 
   # GET /items/new
   # GET /items/new.json
@@ -75,5 +95,14 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url }
       format.json { head :no_content }
     end
+  end
+  
+  def edit_multiple
+    @products = Product.all
+  end
+  
+  def update_multiple
+    Product.update(params[:items].keys, params[:items].values)
+    redirect_to items_url
   end
 end

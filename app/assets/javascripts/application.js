@@ -512,3 +512,14 @@ sorttable = {
             resolve.forEach(object, block, context);
           }
         };
+        
+//   $(function() {
+//   $("#items th a, #items").on("click", "a" function() {
+//     $.getScript(this.href);
+//     return false;
+//   });
+//   $("#items_search input").keyup(function() {
+//     $.get($("#items_search").attr("action"), $("#items_search").serialize(), null, "script");
+//     return false;
+//   });
+// });
