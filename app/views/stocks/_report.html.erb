@@ -1,0 +1,23 @@
+<div class="panel-body">
+  <div class="row">
+    <table class="table table-hover">
+      <thead class="warning">
+      <th><center>Color</center></th>
+      <th><center>Material</center></th>
+      <th><center>Espesor</center></th>
+      <th><center>Altas</center></th>
+      <th ><center>Bajas</center></th>
+      </thead>
+<% @reported_stocks.each do |stock| %>
+<tbody>
+  <tr>
+  <td><%= stock.item.nombre %></td>
+  <td><center><%= stock.item.material %></center></td>
+  <td><center><%= stock.item.espesor %></center></td>
+  <td><center><%= stock.altas %></center></td>
+  <td><center><%= stock.bajas %></center></td>
+
+<% end %>
+</tr>
+</tbody>
+</table>

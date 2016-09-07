@@ -27,14 +27,14 @@ class StocksController < ApplicationController
     # @stock = Stock.new(params[:data].keys, params[:data].values)
    params["data"].each do |d|
     # if d["altas"].nil? && d["bajas"].nil?
-    
+
     # else
     @stock = Stock.create(my_params(d))
     if @stock.altas == nil && @stock.bajas == nil
       @stock.destroy
     else
       @stock.save
-       
+
     end
     @item = Item.find(@stock.item_id)
     if @stock.altas != nil
@@ -47,7 +47,7 @@ class StocksController < ApplicationController
 
     end
    end
-    
+
       redirect_to change_path, notice: 'Stock was successfully created.'
 
    end
@@ -66,9 +66,15 @@ class StocksController < ApplicationController
     @stock.destroy
     redirect_to stocks_url, notice: 'Stock was successfully destroyed.'
   end
-  
+
   def change
     @stocks = Stock.where("created_at >= ?", Time.zone.now - 1.hour)
+  end
+
+  def report
+  @from = params[:desde].present? ? params[:desde] : Time.zone.now
+  @to = params[:hasta].present? ? params[:hasta] : Time.zone.now
+  @reported_stocks = Stock.select("item_id as item_id, sum(altas) as altas, sum(bajas) as bajas").where("created_at BETWEEN ? AND ?", @from , @to ).group("item_id")
   end
 
 
@@ -82,7 +88,7 @@ class StocksController < ApplicationController
     def stock_params
       params.require(:stock).permit(:altas, :bajas, :item_id)
     end
-    
+
     def my_params(my_params)
       my_params.permit(:altas, :bajas, :item_id)
     end

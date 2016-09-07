@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require jasny-bootstrap
+//= require index
 
 
 
@@ -491,6 +492,8 @@ sorttable = {
           });
         };
 
+
+
         // globally resolve forEach enumeration
         var forEach = function(object, block, context) {
           if (object) {
@@ -512,7 +515,7 @@ sorttable = {
             resolve.forEach(object, block, context);
           }
         };
-        
+
 //   $(function() {
 //   $("#items th a, #items").on("click", "a" function() {
 //     $.getScript(this.href);
@@ -522,4 +525,8 @@ sorttable = {
 //     $.get($("#items_search").attr("action"), $("#items_search").serialize(), null, "script");
 //     return false;
 //   });
+// });
+
+
+
 // });

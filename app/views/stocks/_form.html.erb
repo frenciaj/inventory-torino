@@ -2,8 +2,8 @@
 
   <div class="panel-body">
     <div class="row">
-      <table class="table table-hover">
-        <thead class="warning">
+      <table class="table sortable">
+        <thead>
         <th><center>Color</center></th>
         <th><center>Material</center></th>
         <th><center>Espesor</center></th>
@@ -14,7 +14,7 @@
 
  <% @items.each do |item| %>
   <%= fields_for 'data[]', @stock do |stock| %>
-  <tbody>
+
     <tr>
     <td><%= item.nombre %></td>
     <td><center><%= item.material %></center></td>
@@ -26,7 +26,6 @@
 
 <% end %>
 </tr>
-</tbody>
 </table>
 <div class="form-group">
     <div class="col-sm-offset-3 col-sm-5">
@@ -34,8 +33,3 @@
 <% end %>
 </div>
 </div>
-
- 
-   
-
-    

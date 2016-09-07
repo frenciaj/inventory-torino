@@ -7,14 +7,16 @@ Rims::Application.routes.draw do
   #root :to => redirect('/items')
   resources :items
   resources :users
-  
+
   resources :items do
-     
-    resources :stocks 
- 
-    
-    
+
+    resources :stocks
+
+
+
   end
-  
+
   get '/change' => 'stocks#change', :as => :change
+
+  get '/report' => 'stocks#report', :as => :report
 end

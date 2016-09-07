@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title center_div">Reporte de Altas y Bajas</h2><br>
+<div class="form-inline center_div">
+  <div class="form-group"><%= form_tag report_path, :method => 'get', :id => "items_report" do %>
+    <p>
+      Desde <%= date_field_tag :desde, params[:desde], class: "form-control"  %>
+      Hasta <%= date_field_tag :hasta, params[:hasta], class: "form-control" %>
+
+      <%= submit_tag "Reporte", :name => nil, class: "btn btn-danger" %>
+      <% end %>
+    </p>
+  </div>
+</div>
+
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <table class="table sortable">
+        <thead>
+        <th><center>Color</center></th>
+        <th><center>Material</center></th>
+        <th><center>Espesor</center></th>
+        <th><center>Altas</center></th>
+        <th ><center>Bajas</center></th>
+        </thead>
+  <% @reported_stocks.each do |stock| %>
+
+    <tr>
+    <td><%= stock.item.nombre %></td>
+    <td><center><%= stock.item.material %></center></td>
+    <td><center><%= stock.item.espesor %></center></td>
+    <td><center><%= stock.altas %></center></td>
+    <td><center><%= stock.bajas %></center></td>
+
+  <% end %>
+  </tr>
+
+  </table>

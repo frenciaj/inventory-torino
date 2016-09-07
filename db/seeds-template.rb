@@ -5,6 +5,6 @@ Item.create!([
   {nombre: "Melamina Blanca", material: "MDF",espesor: "18mm", quantity: 8},
     {nombre: "Melamina Gris", material: "Aglo",espesor: "15mm", quantity: 6},
   {nombre: "Melamina Azul", material: "MDF",espesor: "18mm", quantity: 25},
-  {nombre: "Melamina Rojs", material: "MDF",espesor: "18mm", quantity: 1},
+  {nombre: "Melamina Roja", material: "MDF",espesor: "18mm", quantity: 1},
 
 ])

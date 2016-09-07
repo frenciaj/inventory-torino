@@ -15,7 +15,7 @@ gem "seed_dump"
 gem 'twitter-bootstrap-rails'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
-
+gem 'pdfkit'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

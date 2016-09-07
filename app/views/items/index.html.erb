@@ -1,13 +1,14 @@
 
-<% @items = Item.paginate(:page => params[:page]) %>
+<!-- <% @items = Item.paginate(:page => params[:page]) %> -->
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Productos</h3>
-    <div class="form-group">
-      <div class="navbar"><%= form_tag items_path, :method => 'get', :id => "items_search" do %>
+    <h2 class="panel-title center_div">Productos</h2><br>
+    <div class="form-inline">
+      <div class="center_div"><%= form_tag items_path, :method => 'get', :id => "items_search" do %>
         <p>
-          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <%= text_field_tag :search, params[:search], class: "form-control", style: "width:90%" %>
+
           <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
         </p>
 
