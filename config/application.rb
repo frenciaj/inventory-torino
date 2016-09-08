@@ -74,7 +74,7 @@ module Rims
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.serve_static_assets = true
+    config.serve_static_files = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
