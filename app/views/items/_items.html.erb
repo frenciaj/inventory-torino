@@ -1,6 +1,6 @@
 <div class="panel-body">
     <div class="row">
-      <table class="table sortable">
+      <table class="table sortable table-hover">
         <thead>
         <th><center>Color</center></th>
         <th><center>Material</center></th>
@@ -15,7 +15,7 @@
 
         <% @filtered_items.each do |item| %>
         <tr>
-          <td><%= link_to item.nombre, item %></td>
+          <td><%= item.nombre %></td>
           <td><center><%= item.material %></center></td>
           <td><center><%= item.espesor %></center></td>
           <td><center><%= item.quantity %></center></td>

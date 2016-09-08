@@ -1,7 +1,7 @@
 <div class="panel-body">
   <div class="row">
     <table class="table table-hover">
-      <thead class="warning">
+      <thead>
       <th><center>Color</center></th>
       <th><center>Material</center></th>
       <th><center>Espesor</center></th>
@@ -9,7 +9,7 @@
       <th ><center>Bajas</center></th>
       </thead>
 <% @reported_stocks.each do |stock| %>
-<tbody>
+
   <tr>
   <td><%= stock.item.nombre %></td>
   <td><center><%= stock.item.material %></center></td>
@@ -19,5 +19,5 @@
 
 <% end %>
 </tr>
-</tbody>
+
 </table>
