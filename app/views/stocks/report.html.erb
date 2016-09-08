@@ -8,6 +8,7 @@
       Hasta <%= date_field_tag :hasta, params[:hasta], class: "form-control" %>
 
       <%= submit_tag "Reporte", :name => nil, class: "btn btn-danger" %>
+      <%= button_tag 'Imprimir', class: "btn btn-danger", :onclick => 'window.print();return false;'%>
       <% end %>
     </p>
   </div>
@@ -16,13 +17,15 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <table class="table sortable">
+      <table class="table sortable table-hover">
         <thead>
         <th><center>Color</center></th>
         <th><center>Material</center></th>
         <th><center>Espesor</center></th>
         <th><center>Altas</center></th>
         <th ><center>Bajas</center></th>
+        <th ><center>Cantidad Actual</center></th>
+
         </thead>
   <% @reported_stocks.each do |stock| %>
 
@@ -32,6 +35,8 @@
     <td><center><%= stock.item.espesor %></center></td>
     <td><center><%= stock.altas %></center></td>
     <td><center><%= stock.bajas %></center></td>
+    <td><center><%= stock.item.quantity %></center></td>
+
 
   <% end %>
   </tr>

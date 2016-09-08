@@ -5,9 +5,9 @@
         <th><center>Color</center></th>
         <th><center>Material</center></th>
         <th><center>Espesor</center></th>
-        <th><center>Stock</center></th>
+        <th><center>Cantidad</center></th>
         <% if current_user.role != "user" %>
-        <th class="sorttable_nosort"><center>Edit/Delete</center></th>
+        <th class="sorttable_nosort"><center>Editar/Borrar</center></th>
         <%else%>
         <th></th>
         <%end%>
@@ -30,7 +30,7 @@
 
         <tfoot>
           <tr>
-            <td><b>Totals</b></td>
+            <td><b>Total</b></td>
             <td></td>
             <td></td>
 

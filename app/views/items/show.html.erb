@@ -21,20 +21,20 @@
 
       <div class="row">
         <div class="col-md-2"><b>Espesor</b></div>
-        <div class="col-md-4"><%= @item.espesor %></div>
+        <div class="col-md-4"><%= @item.espesor %>mm</div>
       </div>
 
       <div class="row">
-        <div class="col-md-2"><b>Quantity</b></div>
+        <div class="col-md-2"><b>Cantidad</b></div>
         <div class="col-md-4"><%= @item.quantity %></div>
       </div>
 
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-4">
-            <%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-primary" %>
-            <%= link_to 'Delete', @item, confirm: 'Are you sure?', method: :delete, :class => "btn btn-warning" %>
-            <%= link_to 'Cancel', items_path, :class => "btn btn-danger" %>
+            <%= link_to 'Editar', edit_item_path(@item), :class => "btn btn-primary" %>
+            <%= link_to 'Borrar', @item, confirm: 'Are you sure?', method: :delete, :class => "btn btn-warning" %>
+            <%= link_to 'Volver', items_path, :class => "btn btn-danger" %>
           </div>
         </div>
 

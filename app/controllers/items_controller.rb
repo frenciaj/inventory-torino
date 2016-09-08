@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to @item, notice: 'Producto creado satisfactoriamente.' }
         format.json { render json: @item, status: :created, location: @item }
       else
         respond_with(@items)
@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to @item, notice: 'Producto actualizado satisfactoriamente.' }
         format.json { head :no_content }
       else
         respond_with(@items)

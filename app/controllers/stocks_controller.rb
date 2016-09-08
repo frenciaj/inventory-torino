@@ -48,7 +48,7 @@ class StocksController < ApplicationController
     end
    end
 
-      redirect_to change_path, notice: 'Stock was successfully created.'
+      redirect_to change_path, notice: 'Cambio en el inventario creado.'
 
    end
 
@@ -68,7 +68,7 @@ class StocksController < ApplicationController
   end
 
   def change
-    @stocks = Stock.where("created_at >= ?", Time.zone.now - 1.hour)
+    @stocks = Stock.where("created_at >= ?", Date.today)
   end
 
   def report

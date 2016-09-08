@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
   self.per_page = 50
 
  def self.search(search_term)
-  where("nombre LIKE ?", "%#{search_term}%")
+  where("nombre ILIKE ?", "%#{search_term}%")
  end
 
  protected
