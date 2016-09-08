@@ -10,12 +10,11 @@
  *
  *= require_self
  *= require_tree .
+ *= require font-awesome
+ *= require jasny-bootstrap
  */
 
-*= require_tree .
- *= require font-awesome
 
- *= require jasny-bootstrap
 
 body { padding-top: 60px; }
 footer { margin-top: 100px; }
