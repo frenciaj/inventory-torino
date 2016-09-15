@@ -23,14 +23,21 @@
  <div class="form-group">
     <%= f.label :material, class: "col-sm-3 control-label" %>
     <div class="col-sm-5">
-      <%= f.select(:material, options_for_select([['MDF', 'MDF'], ['Aglo', 'Aglo'],['Corlok', 'Corlok'],['Chapadur','Chapadur'],['Multilaminado','Multilaminado'],['Terciado','Terciado']]), {}, {class: "form-control"}) %>
+      <%= f.select(:material, options_for_select([['', ''],['MDF', 'MDF'], ['Aglo', 'Aglo'],['Chapadur','Chapadur'],['Multilaminado','Multilaminado'],['Terciado','Terciado']].sort_by {|k,v| v}), {}, {class: "form-control"}) %>
     </div>
   </div>
 
   <div class="form-group">
+     <%= f.label :marca, class: "col-sm-3 control-label" %>
+     <div class="col-sm-5">
+       <%= f.select(:marca, options_for_select([['', ''],['Faplac', 'Faplac'], ['Massisa', 'Massisa'],['Enchapado','Enchapado'],['Guillermina','Guillermina'],['Terciado','Terciado'],['Fiplasto','Fiplasto'],['Trupan','Trupan']].sort_by {|k,v| v}), {}, {class: "form-control"}) %>
+     </div>
+   </div>
+
+  <div class="form-group">
     <%= f.label :espesor, class: "col-sm-3 control-label" %>
     <div class="col-sm-5">
-      <%= f.select(:espesor, options_for_select([['3mm', '3mm'], ['4mm', '4mm'],['5,5mm', '5,5mm'],['9mm','9mm'],['12mm','12mm'],['15mm','15mm'],['18mm','18mm'],['22mm','22mm'],['25mm','25mm']]), {}, {class: "form-control"}) %>
+      <%= f.select(:espesor, options_for_select([['', ''],['3mm', '3mm'],['5,5mm', '5,5mm'],['9mm','9mm'],['12mm','12mm'],['15mm','15mm'],['18mm','18mm'],['22mm','22mm'],['25mm','25mm'],['30mm','30mm']].sort_by {|k,v| v}), {}, {class: "form-control"}) %>
     </div>
   </div>
 

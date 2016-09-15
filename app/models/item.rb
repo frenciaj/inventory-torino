@@ -6,7 +6,8 @@ class Item < ActiveRecord::Base
   self.per_page = 50
 
  def self.search(search_term)
-  where("nombre ILIKE ?", "%#{search_term}%")
+  # where('nombre ILIKE ?', '%#{search_term}%')
+  where("CONCAT(nombre, marca, material, espesor) ILIKE '%#{search_term}%'" )
  end
 
  protected

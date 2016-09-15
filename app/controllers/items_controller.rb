@@ -10,15 +10,7 @@ class ItemsController < ApplicationController
   @filtered_items = params[:search].present? ? Item.search(params[:search]) : Item.all
   end
 
-  # def search
-  #       @items = Item.all
 
-  # end
-
-  # def search_results
-  #   @found_items = Item.keyword_seach(params[:search_keywords])
-  #   render :layout => false
-  # end
 
 
   # GET /items/1

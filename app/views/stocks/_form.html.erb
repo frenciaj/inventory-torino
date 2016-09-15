@@ -6,6 +6,7 @@
         <thead>
         <th><center>Color</center></th>
         <th><center>Material</center></th>
+        <th><center>Marca</center></th>
         <th><center>Espesor</center></th>
         <th><center>Altas</center></th>
         <th ><center>Bajas</center></th>
@@ -18,7 +19,8 @@
     <tr>
     <td><%= item.nombre %></td>
     <td><center><%= item.material %></center></td>
-    <td><center><%= item.espesor %></center></td>
+    <td><center><%= item.marca %></center></td>
+    <td><center><%= item.espesor %> mm</center></td>
     <td><center><%= stock.text_field :altas %></center></td>
     <td><center><%= stock.text_field :bajas %></center></td>
     <%= stock.hidden_field :item_id, :value => item.id %>
