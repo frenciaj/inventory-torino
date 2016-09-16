@@ -12,4 +12,5 @@
  *= require_tree .
  *= require font-awesome
  *= require jasny-bootstrap
+ *= require emails
  */
