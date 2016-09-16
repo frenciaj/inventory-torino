@@ -47,7 +47,7 @@ class StocksController < ApplicationController
 
     end
    end
-      # ItemMailer.reporte_diario_email(@user).deliver_now
+      ItemMailer.reporte_diario_email(@user).deliver_now
 
       redirect_to change_path, notice: 'Cambio en el inventario creado.'
 
