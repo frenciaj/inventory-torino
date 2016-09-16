@@ -76,10 +76,10 @@ Rims::Application.configure do
   #   enable_starttls_auto: true  }
   config.action_mailer.smtp_settings = {
   address:              'smtp.zoho.com',
-  port:                 587,
+  port:                 465,
   domain:               'zoho.com',
   user_name:            ENV['ZOHO_USER'],
   password:             ENV['ZOHO_PASS'],
-  authentication:       'plain',
+  authentication:       'login',
   enable_starttls_auto: true  }
 end
