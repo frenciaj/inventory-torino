@@ -19,4 +19,6 @@ Rims::Application.routes.draw do
   get '/change' => 'stocks#change', :as => :change
 
   get '/report' => 'stocks#report', :as => :report
+
+
 end

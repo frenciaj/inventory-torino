@@ -25,6 +25,7 @@ class StocksController < ApplicationController
   # POST /stocks
    def create
     # @stock = Stock.new(params[:data].keys, params[:data].values)
+    @user = current_user
    params["data"].each do |d|
     # if d["altas"].nil? && d["bajas"].nil?
 
@@ -34,7 +35,6 @@ class StocksController < ApplicationController
       @stock.destroy
     else
       @stock.save
-
     end
     @item = Item.find(@stock.item_id)
     if @stock.altas != nil
@@ -47,6 +47,7 @@ class StocksController < ApplicationController
 
     end
    end
+      ItemMailer.reporte_diario_email(@user).deliver_now
 
       redirect_to change_path, notice: 'Cambio en el inventario creado.'
 
@@ -72,6 +73,7 @@ class StocksController < ApplicationController
   end
 
   def report
+    
   @from = params[:desde].present? ? params[:desde] : Time.zone.now
   @to = params[:hasta].present? ? params[:hasta] : Time.zone.now
   @reported_stocks = Stock.select("item_id as item_id, sum(altas) as altas, sum(bajas) as bajas").where("created_at BETWEEN ? AND ?", @from , @to ).group("item_id")

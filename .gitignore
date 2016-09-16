@@ -18,3 +18,5 @@
 coverage/
 
 public/uploads/tmp/
+
+config/secrets.yml

@@ -16,8 +16,16 @@
   <td><center><%= stock.item.material %></center></td>
   <td><center><%= stock.item.marca %></center></td>
   <td><center><%= stock.item.espesor %> mm</center></td>
+  <% if stock.altas.nil? %>
+    <td><center>0</center></td>
+  <%else%>
   <td><center><%= stock.altas %></center></td>
+  <%end%>
+  <% if stock.bajas.nil? %>
+    <td><center>0</center></td>
+  <%else%>
   <td><center><%= stock.bajas %></center></td>
+  <%end%>
 
 <% end %>
 </tr>
