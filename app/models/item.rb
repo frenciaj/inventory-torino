@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
     has_many :stocks
-  attr_accessible :nombre, :espesor, :material, :quantity
+  attr_accessible :nombre, :espesor, :material, :quantity, :marca
   accepts_nested_attributes_for :stocks
 
   self.per_page = 50
