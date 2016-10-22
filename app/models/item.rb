@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-    has_many :stocks
+    has_many :stocks, dependent: :destroy
   attr_accessible :nombre, :espesor, :material, :quantity, :marca
   accepts_nested_attributes_for :stocks
 
